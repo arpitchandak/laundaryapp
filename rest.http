@@ -1,0 +1,43 @@
+###get request
+GET http://localhost:3000/cart/fetchAllitem
+
+### post request
+POST http://localhost:3000/cart/additem
+Content-Type: application/json
+
+{
+    "item_name": "Bed Sheet",
+    "item_id": "L",
+    "service_type": "Dry Clean",
+    "price": 30,
+    "for": "Bedding",
+    "img": "https://image.flaticon.com/icons/svg/2737/2737843.svg"
+    
+}
+
+
+### post request
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "uemail": "vhhv@123.com",
+    "upass": "akc1011123"
+}
+
+###single id get request
+GET http://localhost:3000/login/arpi@123.com
+
+###single id Update request
+PATCH  http://localhost:3000/data/5ea9307c5e6e612408b423eas2
+Content-Type: application/json
+
+{
+    "avatar": "sadad"
+}
+
+###single id delete request
+DELETE  http://localhost:3000/data/5ea92f29a0428b29b466dd3a
+
+###single id get request
+GET http://localhost:3000/ 

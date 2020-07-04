@@ -1,0 +1,20 @@
+{
+  "name": "laundary",
+  "version": "1.0.0",
+  "description": "apis for launday project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Arpit Chandak",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "mongoose": "^5.9.20",
+    "nodemon": "^2.0.4",
+    "touch": "^3.1.0"
+  }
+}
