@@ -23,10 +23,15 @@ mongoose.connect(process.env.MONGODB_URI,{
 
 const LoginRoute = require('./routes/Login.check')
 const AllDataRoute = require('./routes/Cart/AllDataRoute')
+const SlidersRoutes = require('./routes/DashBoard/SlidersRoutes')
+const OurServices = require('./routes/DashBoard/OurServices')
+const OffersTypes = require('./routes/DashBoard/OffersTypes')
 
 app.use('/',LoginRoute)
-
 app.use('/cart',AllDataRoute)
+app.use('/dashboard',SlidersRoutes)
+app.use('/dashboard',OurServices)
+app.use('/dashboard',OffersTypes)
 
 app.use((req,res,next) => {
     next(httperror(400, "Not Found"))

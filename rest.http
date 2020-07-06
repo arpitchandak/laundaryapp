@@ -1,18 +1,12 @@
 ###get request
-GET http://localhost:3000/cart/fetchAllitem
+GET http://localhost:3000/dashboard/slider
 
 ### post request
-POST http://localhost:3000/cart/additem
+POST http://localhost:3000/dashboard/slider
 Content-Type: application/json
 
 {
-    "item_name": "Bed Sheet",
-    "item_id": "L",
-    "service_type": "Dry Clean",
-    "price": 30,
-    "for": "Bedding",
-    "img": "https://image.flaticon.com/icons/svg/2737/2737843.svg"
-    
+    "img": "https://media3.s-nbcnews.com/i/newscms/2016_32/1149295/laundry-stock-today-160808-tease_8816217b49c15bf3fc07bbcd6558c2db.jpg"   
 }
 
 
@@ -37,7 +31,7 @@ Content-Type: application/json
 }
 
 ###single id delete request
-DELETE  http://localhost:3000/data/5ea92f29a0428b29b466dd3a
+DELETE  http://localhost:3000/dashboard/slider/5f034a70a39aef435000050e
 
 ###single id get request
 GET http://localhost:3000/ 
