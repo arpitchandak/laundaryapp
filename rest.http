@@ -2,11 +2,14 @@
 GET http://localhost:3000/dashboard/slider
 
 ### post request
-POST http://localhost:3000/dashboard/slider
+POST https://scenic-lassen-volcanic-38075.herokuapp.com/dashboard/offers
 Content-Type: application/json
 
 {
-    "img": "https://media3.s-nbcnews.com/i/newscms/2016_32/1149295/laundry-stock-today-160808-tease_8816217b49c15bf3fc07bbcd6558c2db.jpg"   
+    "offer_name":"Flat 10% on Wash & Iron",
+    "img":"https://image.flaticon.com/icons/svg/2913/2913641.svg",
+    "coupon_code":"LAUNDARY500IRON",
+    "valid_till":"11 Jan 2021"   
 }
 
 
