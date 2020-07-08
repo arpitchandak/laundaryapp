@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt');
 
 
 router.get('/offers',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     try {
         const result = await Product.find({} , {__v: 0})
@@ -25,7 +24,6 @@ router.get('/offers',async (req,res,next) => {
 })
 
 router.post('/offers',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     try {
         await Product.find({coupon_code: req.body.coupon_code})
@@ -53,7 +51,6 @@ router.post('/offers',async (req,res,next) => {
 
 
 router.delete('/offers/:id',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     const id = req.params.id
     try {
@@ -70,8 +67,6 @@ router.delete('/offers/:id',async (req,res,next) => {
 
 
 router.patch('/offers/:id',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
-
     try {
         const id = req.params.id
         const update = req.body

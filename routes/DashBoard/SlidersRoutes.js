@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt');
 
 
 router.get('/slider',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
     try {
         const result = await Product.find({} , {__v: 0})
         if(!result){
@@ -24,7 +23,6 @@ router.get('/slider',async (req,res,next) => {
 })
 
 router.post('/slider',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     try {
         const product = new Product(req.body)
@@ -43,7 +41,6 @@ router.post('/slider',async (req,res,next) => {
 
 
 router.delete('/slider/:id',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     const id = req.params.id
     try {
@@ -60,7 +57,6 @@ router.delete('/slider/:id',async (req,res,next) => {
 
 
 router.patch('/slider/:id',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     try {
         const id = req.params.id

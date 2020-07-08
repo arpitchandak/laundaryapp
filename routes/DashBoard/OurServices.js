@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt');
 
 
 router.get('/service_type',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     try {
         const result = await Product.find({} , {__v: 0})
@@ -25,7 +24,6 @@ router.get('/service_type',async (req,res,next) => {
 })
 
 router.post('/service_type',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     try {
         await Product.find({service_name: req.body.service_name})
@@ -53,7 +51,6 @@ router.post('/service_type',async (req,res,next) => {
 
 
 router.delete('/service_type/:id',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     const id = req.params.id
     try {
@@ -70,7 +67,6 @@ router.delete('/service_type/:id',async (req,res,next) => {
 
 
 router.patch('/service_type/:id',async (req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin','*');
 
     try {
         const id = req.params.id
