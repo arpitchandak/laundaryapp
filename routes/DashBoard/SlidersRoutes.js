@@ -25,6 +25,11 @@ router.get('/slider',async (req,res,next) => {
 
 router.post('/slider',async (req,res,next) => {
     res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
 
     try {
         const product = new Product(req.body)

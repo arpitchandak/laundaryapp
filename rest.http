@@ -2,14 +2,12 @@
 GET http://localhost:3000/dashboard/slider
 
 ### post request
-POST https://scenic-lassen-volcanic-38075.herokuapp.com/dashboard/offers
+POST https://scenic-lassen-volcanic-38075.herokuapp.com/dashboard/slider
 Content-Type: application/json
 
 {
-    "offer_name":"Flat 10% on Wash & Iron",
-    "img":"https://image.flaticon.com/icons/svg/2913/2913641.svg",
-    "coupon_code":"LAUNDARY500IRON",
-    "valid_till":"11 Jan 2021"   
+    "img":"https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
+
 }
 
 
