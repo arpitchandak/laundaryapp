@@ -27,6 +27,27 @@ const SlidersRoutes = require('./routes/DashBoard/SlidersRoutes')
 const OurServices = require('./routes/DashBoard/OurServices')
 const OffersTypes = require('./routes/DashBoard/OffersTypes')
 
+
+
+// Enable cors
+app.use('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update later
+    // Allowed headers
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+
+    // Allowed request methods
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PUT, DELETE"
+    );
+    next();
+});
+
+
+
 app.use('/',LoginRoute)
 app.use('/cart',AllDataRoute)
 app.use('/dashboard',SlidersRoutes)
@@ -38,17 +59,9 @@ app.use((req,res,next) => {
  })
 
  app.use((error,req,res,next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers',  "Origin, X-Requested-With, Content-Type, Accept");
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, x-access-token, x-user-pathway, x-mongo-key, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
    
     res.status(error.status || 500 )
     res.send({
