@@ -11,6 +11,9 @@ const LOGIN_TYPE = {
     'social': 'L03'
 };
 
+
+
+
 router.post('/',(req, res, next) => {
     let loginType = req.body.loginType;
     console.log(req.body);
