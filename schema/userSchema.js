@@ -3,9 +3,15 @@ let Schema = mongoose.Schema;
 
 let userSchema = new Schema({
     name: String,
-    email: String,
+    email: {
+        type: String,
+        unique: true
+    },
     image: String,
-    contact: String,
+    contact: {
+        type: String,
+        unique: true
+    },
     password: String,
     jwtToken: String,
     loc_lat: String,

@@ -48,8 +48,8 @@ router.post('/',(req, res, next) => {
                     contact: contact,
                     password: passHash,
                     jwtToken: token,
-                    loc_lan:"",
-                    loc_lat:""
+                    loc_lat:"",
+                    loc_lon:""
                 });
 
                 user.save((error) => {
