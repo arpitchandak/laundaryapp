@@ -28,8 +28,7 @@ router.post('/',(req, res, next) => {
 
         console.log("Hello user"+email);
 
-        User.find({ "email": email }).exec().then( user => {
-            console.log("Hello ttstst"+user);
+        User.find({ "email": req.body.email }).exec().then( user => {
             if (user.length > 1) {
                 return res.status(409).json({
                     message: 'Already Exists'
