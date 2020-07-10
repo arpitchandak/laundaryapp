@@ -1,20 +1,20 @@
 {
-  "name": "laundary",
-  "version": "1.0.0",
-  "description": "apis for launday project",
-  "main": "index.js",
+  "name": "generatedlaundary",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node ./bin/www"
   },
-  "author": "Arpit Chandak",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "http-errors": "^1.7.3",
-    "mongoose": "^5.9.20",
-    "nodemon": "^2.0.4",
-    "touch": "^3.1.0"
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.22",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   }
 }
