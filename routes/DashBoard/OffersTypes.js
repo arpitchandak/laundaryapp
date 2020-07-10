@@ -2,7 +2,7 @@ const express =require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const httperror = require('http-errors')
-const Product = require('../../schema/DashBorad/OffersSchema')
+const Product = require('../../schema/DashBoard/OffersSchema')
 const bcrypt = require('bcrypt');
 
 
