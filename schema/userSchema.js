@@ -18,4 +18,7 @@ const userSchema = new Schema({
     loc_lon: String
 });
 
-module.exports = mongoose.model('users', userSchema);
+
+const Users = mongoose.model('user',userSchema)
+
+module.exports = Users

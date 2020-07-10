@@ -26,37 +26,52 @@ router.post('/',(req, res, next) => {
             return res.status(401).json({ message: 'Enter Required Fields' });
         }
 
-        console.log("Hello user"+email);
+        console.log("Hello user "+email);
 
-        User.find({ "email": req.body.email }).exec().then( user => {
-            if (user.length > 1) {
+        User.find({ email: email }).exec().then( user => {
+            console.log(user.length)
+            if (user.length >= 1) {
                 return res.status(409).json({
                     message: 'Already Exists'
                 });
             } else {
                 // jwt token
-                let token = jwt.sign(email);
-                // hash of password for db
-                let passHash = bcrypt.hashSync(password, SALT_ROUNDS);
-                // location of user when login // longitude, latitude
-                // Update user model
-                let user = new User({
-                    name: name,
-                    email: email,
-                    image: "",
-                    contact: contact,
-                    password: passHash,
-                    jwtToken: token,
-                    loc_lat:"",
-                    loc_lon:""
-                });
-
-                user.save((error) => {
-                    if (error) return res.status(401).json({
-                        message: 'Auth Failed'
-                    });
-                    return res.status(200).json(user);
-                });
+                
+                User.find({contact: contact}).exec().then(user => {
+                    if (user.length >= 1) {
+                        return res.status(409).json({
+                            message: 'Already Exists'
+                        });
+                    } else {
+                        // jwt token
+                        
+                        let token = jwt.sign(email);
+                        // hash of password for db
+                        let passHash = bcrypt.hashSync(password, SALT_ROUNDS);
+                        // location of user when login // longitude, latitude
+                        // Update user model
+                        let user_c = new User({
+                            name: name,
+                            email: email,
+                            image: "",
+                            contact: contact,
+                            password: passHash,
+                            jwtToken: token,
+                            loc_lat:"",
+                            loc_lon:""
+                        });
+        
+                        const result =  user_c.save().then(result => {
+                            res.status(201).json({
+                                message: 'User Created Successfully!!'
+                            })
+                        }).catch(err => {
+                            return res.status(400).json({
+                                message: err.message
+                            })
+                        })
+                    }
+                })
             }
         }).catch((err) => {
             return res.status(401).json({
