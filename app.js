@@ -11,6 +11,7 @@ var AllDataRoute = require('./routes/Cart/AllDataRoute')
 var SlidersRoutes = require('./routes/DashBoard/SlidersRoutes')
 var OurServices = require('./routes/DashBoard/OurServices')
 var OffersTypes = require('./routes/DashBoard/OffersTypes')
+var ForTypes = require('./routes/Cart/ForCategoryRoutes')
 
 var app = express();
 
@@ -64,6 +65,7 @@ app.use('/cart',AllDataRoute)
 app.use('/dashboard',SlidersRoutes)
 app.use('/dashboard',OurServices)
 app.use('/dashboard',OffersTypes)
+app.use('/',ForTypes)
 
 
 
