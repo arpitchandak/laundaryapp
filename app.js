@@ -12,6 +12,7 @@ var SlidersRoutes = require('./routes/DashBoard/SlidersRoutes')
 var OurServices = require('./routes/DashBoard/OurServices')
 var OffersTypes = require('./routes/DashBoard/OffersTypes')
 var ForTypes = require('./routes/Cart/ForCategoryRoutes')
+var ForTypes = require('./routes/Cart/ServiceTypeRoute')
 
 var app = express();
 
@@ -66,6 +67,7 @@ app.use('/dashboard',SlidersRoutes)
 app.use('/dashboard',OurServices)
 app.use('/dashboard',OffersTypes)
 app.use('/',ForTypes)
+app.use('/',ServiceTypes)
 
 
 
