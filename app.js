@@ -12,6 +12,9 @@ var SlidersRoutes = require('./routes/DashBoard/SlidersRoutes')
 var OurServices = require('./routes/DashBoard/OurServices')
 var OffersTypes = require('./routes/DashBoard/OffersTypes')
 var ForTypes = require('./routes/Cart/ForCategoryRoutes')
+var Faq = require('./routes/Others/FAQroute')
+var Term = require('./routes/Others/TermsRoute')
+var Privacy = require('./routes/Others/PrivacyRoute')
 
 var app = express();
 
@@ -66,6 +69,9 @@ app.use('/dashboard',SlidersRoutes)
 app.use('/dashboard',OurServices)
 app.use('/dashboard',OffersTypes)
 app.use('/',ForTypes)
+app.use('/',Faq)
+app.use('/',Term)
+app.use('/',Privacy)
 
 
 
