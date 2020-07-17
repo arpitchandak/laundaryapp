@@ -56,7 +56,7 @@ app.use('*', function(req, res, next) {
   // Allowed request methods
   res.setHeader(
       "Access-Control-Allow-Methods",
-      "GET, POST, PUT, DELETE"
+      "GET, POST, PUT, DELETE, PATCH"
   );
   next();
 });
