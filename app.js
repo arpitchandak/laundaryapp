@@ -15,6 +15,8 @@ var ForTypes = require('./routes/Cart/ForCategoryRoutes')
 var Faq = require('./routes/Others/FAQroute')
 var Term = require('./routes/Others/TermsRoute')
 var Privacy = require('./routes/Others/PrivacyRoute')
+var AppInfo = require('./routes/Basic/AppInfoRoute')
+var InfoSlider = require('./routes/Basic/InfoSlidersRoute')
 
 var app = express();
 
@@ -72,6 +74,8 @@ app.use('/',ForTypes)
 app.use('/',Faq)
 app.use('/',Term)
 app.use('/',Privacy)
+app.use('/',AppInfo)
+app.use('/',InfoSlider)
 
 
 
